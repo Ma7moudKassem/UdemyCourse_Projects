@@ -45,13 +45,7 @@ class SocialLogin extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Center(
-                          child: Image(
-                            image: AssetImage('assets/images/login.png'),
-                            height: 250,
-                            width: 250,
-                          ),
-                        ),
+
                         Text(
                           'LOGIN',
                           style: Theme.of(context).textTheme.headline4.copyWith(

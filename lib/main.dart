@@ -47,7 +47,6 @@ void main() async {
 
   if (onBoarding != null) {
     if (token != null)
-
       widget = ShopLoginScreen();
   } else {}
 
@@ -99,7 +98,7 @@ class MyApp extends StatelessWidget {
             darkTheme: darkTheme,
             themeMode:
                 AppCubit.get(context).isDark ? ThemeMode.light : ThemeMode.dark,
-            home: startWidget,
+            home: SocialLogin(),
             debugShowCheckedModeBanner: false,
           );
         },

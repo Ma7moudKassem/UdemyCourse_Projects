@@ -26,7 +26,8 @@ class FeedsScreen extends StatelessWidget {
         return  Scaffold(
           body:
           ConditionalBuilder(
-            condition:SocialCubit.get(context).posts.length > 0,
+            condition:SocialCubit.get(context).posts.length > 0 //&& SocialCubit.get(context).userModel != null,
+              ,
             builder: (context)=>SingleChildScrollView(
               physics: BouncingScrollPhysics(),
 
@@ -63,7 +64,7 @@ class FeedsScreen extends StatelessWidget {
 
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
-                      itemBuilder:  (context , index) => buildPostItem(SocialCubit.get(context).posts[index], context),
+                      itemBuilder:  (context , index) => buildPostItem(SocialCubit.get(context).posts[index], context , index),
 
                       itemCount: SocialCubit.get(context).posts.length)
                 ],
@@ -79,7 +80,7 @@ class FeedsScreen extends StatelessWidget {
 
 
   }
-  Widget buildPostItem(PostModel model , context)=> Card(
+  Widget buildPostItem(PostModel model , context , index)=> Card(
     clipBehavior: Clip.antiAliasWithSaveLayer,
     elevation: 10,
     margin: EdgeInsets.all(5.0),
@@ -166,66 +167,66 @@ class FeedsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    bottom: 10,
-                    top: 5
-                ),
-                child: Container(
-                  width: double.infinity,
-                  child: Wrap(
-
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.only(
-                            end: 6
-                        ),
-                        child: Container(
-                          height: 25,
-                          child: MaterialButton(onPressed: (){},
-                            minWidth: 1,
-
-                            padding: EdgeInsets.zero,
-                            child: Text(
-                              '#Software',
-                              style: TextStyle(
-                                  color: Colors.blue
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.only(
-                            end: 6
-                        ),
-                        child: Container(
-                          height: 25,
-                          child: MaterialButton(onPressed: (){},
-                            minWidth: 1,
-
-                            padding: EdgeInsets.zero,
-                            child: Text(
-                              '#Flutter',
-                              style: TextStyle(
-                                  color: Colors.blue
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-
-                    ],
-                  ),
-
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //       bottom: 10,
+              //       top: 5
+              //   ),
+              //   child: Container(
+              //     width: double.infinity,
+              //     child: Wrap(
+              //
+              //       children: [
+              //         Padding(
+              //           padding: const EdgeInsetsDirectional.only(
+              //               end: 6
+              //           ),
+              //           child: Container(
+              //             height: 25,
+              //             child: MaterialButton(onPressed: (){},
+              //               minWidth: 1,
+              //
+              //               padding: EdgeInsets.zero,
+              //               child: Text(
+              //                 '#Software',
+              //                 style: TextStyle(
+              //                     color: Colors.blue
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         Padding(
+              //           padding: const EdgeInsetsDirectional.only(
+              //               end: 6
+              //           ),
+              //           child: Container(
+              //             height: 25,
+              //             child: MaterialButton(onPressed: (){},
+              //               minWidth: 1,
+              //
+              //               padding: EdgeInsets.zero,
+              //               child: Text(
+              //                 '#Flutter',
+              //                 style: TextStyle(
+              //                     color: Colors.blue
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //
+              //       ],
+              //     ),
+              //
+              //   ),
+              // ),
               if(model.postImage != '')
                  Padding(
                 padding: const EdgeInsetsDirectional.only(
                   top: 15
                 ),
-                child: Container(
+                  child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     image: DecorationImage(
@@ -262,7 +263,7 @@ class FeedsScreen extends StatelessWidget {
                             ),
                             SizedBox(width: 5,),
                             Text(
-                              '0',
+                              '${SocialCubit.get(context).likes[index]}',
                               style: Theme.of(context).textTheme.caption,
                             ),
                           ],
@@ -357,7 +358,9 @@ class FeedsScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    onTap: (){},
+                    onTap: (){
+                      SocialCubit.get(context).likePost(SocialCubit.get(context).postId[index]);
+                    },
                   ),
                   SizedBox(
                     width: 20,

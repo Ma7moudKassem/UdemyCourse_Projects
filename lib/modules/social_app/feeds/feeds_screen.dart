@@ -2,6 +2,7 @@
 
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:kassem_app/layout/social_app/cubit/cubit.dart';
@@ -125,21 +126,24 @@ class FeedsScreen extends StatelessWidget {
                   )
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 15
-                ),
-                child: Container(
-                  width: double.infinity,
-                  height: 1,
-                  color: Colors.grey[300],
-                ),
+              SizedBox(
+                height: 10,
               ),
-              Text(
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-                style: TextStyle(
-                    height: 1.3,
-                    fontSize: 15
+              Container(
+                width: double.infinity,
+                height: 1,
+                color: Colors.grey[300],
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.only(
+                  top: 10
+                ),
+                child: Text(
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                  style: TextStyle(
+                      height: 1.3,
+                      fontSize: 15
+                  ),
                 ),
               ),
               Padding(
@@ -196,26 +200,29 @@ class FeedsScreen extends StatelessWidget {
 
                 ),
               ),
-              SizedBox(
-                height: 5,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  image: DecorationImage(
-                      image: NetworkImage('https://image.freepik.com/free-photo/man-filming-with-professional-camera_23-2149066323.jpg'),
-                      fit: BoxFit.cover
+
+              Padding(
+                padding: const EdgeInsetsDirectional.only(
+                  top: 15
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    image: DecorationImage(
+                        image: NetworkImage('https://image.freepik.com/free-photo/man-filming-with-professional-camera_23-2149066323.jpg'),
+                        fit: BoxFit.cover
+                    ),
+
                   ),
+                  width: double.infinity,
+                  height: 200,
+
+
+
+
+
 
                 ),
-                width: double.infinity,
-                height: 200,
-
-
-
-
-
-
               ),
               Row(
                 children: [

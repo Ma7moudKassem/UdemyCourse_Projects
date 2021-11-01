@@ -29,6 +29,7 @@ class SocialLayout extends StatelessWidget {
 
         return Scaffold(
             appBar: AppBar(
+
               title: Text(
                 cubit.titles[cubit.currentIndex],
               ),

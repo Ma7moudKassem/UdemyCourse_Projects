@@ -98,7 +98,7 @@ class MyApp extends StatelessWidget {
             darkTheme: darkTheme,
             themeMode:
                 AppCubit.get(context).isDark ? ThemeMode.light : ThemeMode.dark,
-            home: SocialLogin(),
+            home: startWidget,
             debugShowCheckedModeBanner: false,
           );
         },

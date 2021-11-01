@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "369352366297",
+    "project_id": "social-app-78456",
+    "storage_bucket": "social-app-78456.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369352366297:android:faf67655714397d63ac6c8",
+        "android_client_info": {
+          "package_name": "com.example.kassem_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369352366297-6ibivr82vc4ljl8rssjbnfihhs1ps9eu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kassem_app",
+            "certificate_hash": "24c36a9cd49b79501c04b0aebbe0d838bf5f07e9"
+          }
+        },
+        {
+          "client_id": "369352366297-f1qq51igoq4jfvbvlnehikup40gm1c1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMf8O7LaK5Yit2aQSizLLCZVXEVgTOcOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369352366297-f1qq51igoq4jfvbvlnehikup40gm1c1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

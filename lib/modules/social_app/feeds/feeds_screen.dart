@@ -98,7 +98,7 @@ class FeedsScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
 
-                    backgroundImage: NetworkImage('${model.image}'),
+                    backgroundImage: NetworkImage('${SocialCubit.get(context).userModel.image}'),
                     radius: 25,
                   ),
                   SizedBox(width: 15,),
@@ -109,7 +109,7 @@ class FeedsScreen extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Text('${model.name}',
+                            Text('${SocialCubit.get(context).userModel.name}',
 
                               style: Theme.of(context).textTheme.bodyText1.copyWith(
                                   height: 1.4
